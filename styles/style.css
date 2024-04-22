@@ -288,10 +288,10 @@
   text-transform: uppercase;
   padding: 30px;
   background-color: var(--color-bg);
-  border: 2px solid var(--color-main);  
+  border: 2px solid var(--color-main);
 }
 
-.popup[open]{
+.popup[open] {
   display: flex;
   flex-direction: column;
   gap: 30px;
