@@ -16,7 +16,7 @@
 
 .page {
   padding-block-start: 100px;
-  font-family: var(--font-main), sans-serif;
+  font-family: var(--font-main);
   color: var(--color-main);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -127,10 +127,11 @@
 }
 
 .card__title {
-  font-weight: var(--font-weight-title);
+  font-variation-settings: "wght" var(--font-weight-title);
   font-size: 18px;
   line-height: 1.21;
   padding: 3px 24px 3px 10px;
+  border-block-end: 2px solid var(--color-main);
 }
 
 .card__image {
@@ -142,8 +143,6 @@
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: right;
-  border-block-start: 2px solid var(--color-main);
-  border-block-end: 2px solid var(--color-main);
 }
 
 .grayscale {
@@ -198,10 +197,11 @@
   display: flex;
   flex-direction: column;
   gap: 27px;
+  border-block-start: 2px solid var(--color-main);
 }
 
 .description_text {
-  font-weight: var(--font-weight-main);
+  font-variation-settings: "wdth" var(--font-weight-main);
   line-height: 1.16;
 }
 
