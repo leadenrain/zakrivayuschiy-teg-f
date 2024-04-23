@@ -314,7 +314,7 @@
   border: 2px solid var(--color-main);
 }
 
-.popup:[open] {
+.popup[open] {
   display: flex;
   flex-direction: column;
 }
