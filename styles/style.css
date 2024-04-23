@@ -16,7 +16,7 @@
 
 .page {
   padding-block-start: 100px;
-  font-family: var(--font-main);
+  font-family: var(--font-main), Arial, Helvetica, sans-serif;
   color: var(--color-main);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: var(--font-accent);
+  font-family: var(--font-accent), fantasy;
   background-color: var(--color-bg);
   border: 2px solid var(--color-main);
   margin-block-end: 100px;
@@ -63,7 +63,7 @@
   display: flex;
   flex-direction: column;
   gap: 7px;
-  padding-inline-start: 19px;
+  padding-inline-start: 11px;
 }
 
 .theme-menu__button {
@@ -73,11 +73,11 @@
   font-size: 14px;
   line-height: 1;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.5s ease;
 }
 
 .theme-menu__button:disabled {
@@ -89,11 +89,9 @@
   content: "▶";
   position: absolute;
   inset-inline-start: -16px;
-  animation: arrow 0.5s ease-in-out infinite alternate;
 }
 
 .theme-menu__button:focus {
-  opacity: 0.6;
   outline: none;
 }
 
@@ -102,26 +100,18 @@
   display: block;
   block-size: 2px;
   background-color: var(--color-main);
-  opacity: 0.6;
-  transform: scalex(0);
-  transform-origin: left;
-}
-
-.theme-menu__button:focus-visible::after {
-  transform: scalex(1);
-  transition: 0.5s ease;
 }
 
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 52px;
+  gap: 50px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  font-family: var(--font-main);
+  font-family: var(--font-main), Arial, Helvetica, sans-serif;
   background-color: var(--color-bg);
   border: 2px solid var(--color-main);
 }
@@ -130,12 +120,14 @@
   font-variation-settings: "wght" var(--font-weight-title);
   font-size: 18px;
   line-height: 1.21;
-  padding: 3px 24px 3px 10px;
-  border-block-end: 2px solid var(--color-main);
+  padding: 4px 24px 4px 10px;
 }
 
 .card__image {
   position: relative;
+  /*block-size: 698px;*/
+  border-block-start: 2px solid var(--color-main);
+  border-block-end: 2px solid var(--color-main);
 }
 
 .image-source {
@@ -166,7 +158,7 @@
 }
 
 .blur {
-  filter: blur(13px);
+  filter: blur(8px);
 }
 
 .mult {
@@ -176,8 +168,8 @@
 .watermark {
   position: absolute;
   inset-block-start: 25px;
-  inset-inline-end: 25px;
-  font-family: var(--font-accent);
+  inset-inline-end: clamp(0.8125rem, 0.5475rem + 1.1278vw, 1.5625rem);
+  font-family: var(--font-accent), fantasy;
   font-size: 14px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
@@ -192,22 +184,22 @@
   }
 }
 
-.card__description {
+.card__text {
   padding: 25px;
   display: flex;
   flex-direction: column;
-  gap: 27px;
-  border-block-start: 2px solid var(--color-main);
-}
-
-.description_text {
+  gap: 29px;
   font-variation-settings: "wdth" var(--font-weight-main);
+  font-size: 18px;
   line-height: 1.16;
 }
 
 .card__buttons {
   display: flex;
   justify-content: end;
+  align-items: stretch;
+  gap: 9px;
+  padding: 0 25px 25px;
 }
 
 .button {
@@ -218,23 +210,21 @@
 }
 
 .button__text {
-  font-family: var(--font-accent);
+  font-family: var(--font-accent), fantasy;
   font-size: 14px;
+  line-height: 1.11;
   color: var(--color-blend);
   mix-blend-mode: difference;
 }
 
 .card__like-button {
-  inline-size: 130px;
+  min-inline-size: 130px;
   color: var(--color-main);
 }
 
-.card__like-button:focus,
-.footer__button:focus,
-.popup__close-btn:focus {
+.btn-shad:focus {
   outline: none;
   box-shadow: 2px 2px 0 var(--color-main);
-  transition: box-shadow 0.5s ease;
 }
 
 .button-paint::before {
@@ -257,6 +247,7 @@
 
 .card__icon-button {
   border: 2px solid transparent;
+  padding: 0;
 }
 
 .card__icon-button:focus {
@@ -271,6 +262,7 @@
 
 .like-icon {
   overflow: visible;
+  width: 32px;
 }
 
 .main-body,
@@ -278,53 +270,33 @@
   fill: none;
 }
 
+.like-icon:hover .core,
+.like-icon:hover .main-body {
+  fill: var(--color-main);
+}
+
+.like-icon:active .core,
+.like-icon:active .main-body {
+  fill: var(--color-heart-mb);
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body,
+.like-icon.is-liked .contour {
+  fill: var(--color-heart-mb);
+}
+
 .sparks {
   opacity: 0;
 }
 
-.popup {
-  font-family: var(--font-accent);
-  color: var(--color-main);
-  text-transform: uppercase;
-  padding: 30px;
-  background-color: var(--color-bg);
-  border: 2px solid var(--color-main);
-}
-
-.popup[open] {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-}
-
-.popup__content {
-  display: flex;
-  gap: 12px;
-}
-
-.popup__text {
-  font-size: 14px;
-  line-height: 1.5;
-  inline-size: clamp(12.375rem, 11.5827rem + 3.3803vw, 14.625rem);
-}
-
-.popup__close-btn {
-  padding: 12.5px 132.5px;
-}
-
-.popup::backdrop {
-  opacity: 0.75;
-  background-color: rgba(0, 0, 0, 1);
-}
-
-footer {
+.save {
   padding: 52px 0 103px;
   display: flex;
   justify-content: center;
 }
 
-.footer__button {
+.save__button {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -332,15 +304,79 @@ footer {
   padding: 18px 20px;
 }
 
+.popup {
+  font-family: var(--font-accent), fantasy;
+  color: var(--color-main);
+  text-transform: uppercase;
+  max-inline-size: 357px;
+  padding: 30px;
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-main);
+}
+
+.popup:[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+/*.popup:focus {
+  outline: none;
+}*/
+
+.popup__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.popup__text {
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.form {
+  padding-block-start: 30px;
+}
+
+.popup__close-btn {
+  padding-block-start: 12.5px;
+  padding-block-end: 12.5px;
+  text-transform: uppercase;
+  inline-size: 100%;
+}
+
+.popup::backdrop {
+  opacity: 0.75;
+  background-color: rgba(0, 0, 0, 1);
+}
+
 .floppy {
   color: var(--color-blend);
   mix-blend-mode: difference;
+  inline-size: 21px;
 }
 
-@media (width <= 375px) {
-  
-  .footer__button {
+.floppy-dlg {
+  inline-size: 39px;
+}
+
+@media (width <=375px) {
+
+  .watermark {
+    inset-inline-end: 13px;
+  }
+
+  .save__button {
     flex-direction: column;
   }
-} 
-  
+
+  .popup {
+    padding: clamp(1.875rem, -2.4886rem + 21.8182vw, 2.625rem);
+  }
+
+  .floppy {
+    inline-size: 28px;
+  }
+}
