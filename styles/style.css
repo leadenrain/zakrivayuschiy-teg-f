@@ -319,10 +319,6 @@
   flex-direction: column;
 }
 
-/*.popup:focus {
-  outline: none;
-}*/
-
 .popup__content {
   display: flex;
   justify-content: center;
