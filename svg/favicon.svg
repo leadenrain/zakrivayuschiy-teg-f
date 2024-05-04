@@ -5,7 +5,7 @@
     fill="000">
 <style>
     @media (prefers-color-scheme: dark) {
-        :root {
+        path {
             fill: rgba(0, 204, 20, 1);
         }
     }

@@ -14,11 +14,11 @@
 */
 
 @keyframes arrow {
-    0% {
+    from {
         inset-inline-start: -16px;
     }
 
-    100% {
+    to {
         inset-inline-start: -12px;
     }
 }
@@ -34,11 +34,11 @@
 }
 
 @keyframes sparks {
-    0% {
+    from {
         opacity: 0;
     }
 
-    100% {
+    to {
         opacity: 1;
     }
 }
