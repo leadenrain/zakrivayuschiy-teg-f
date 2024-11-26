@@ -1,24 +1,9 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-
-*/
 @supports (font-variation-settings: normal) {
   .page {
     font-family: var(--font-main, Arial, Helvetica, sans-serif);
   }
 }
-    
+
 .page {
   padding-block-start: 100px;
   color: var(--color-main, rgba(0, 0, 0, 1));
@@ -31,7 +16,6 @@
   background-attachment: fixed;
   margin: auto;
 }
-
 
 .header {
   display: flex;
@@ -176,14 +160,16 @@
   font-size: 14px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  text-shadow: 
-  -1 0 var(--color-bg, rgba(255, 255, 255, 1)),
-  0 1px var(--color-bg, rgba(255, 255, 255, 1)),
-  1px 0 var(--color-bg, rgba(255, 255, 255, 1)),
-  0 -1px var(--color-bg, rgba(255, 255, 255, 1));
+  text-shadow: -1 0 var(--color-bg, rgba(255, 255, 255, 1)),
+    0 1px var(--color-bg, rgba(255, 255, 255, 1)),
+    1px 0 var(--color-bg, rgba(255, 255, 255, 1)),
+    0 -1px var(--color-bg, rgba(255, 255, 255, 1));
 }
 
-@supports ((text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1))) or (-webkit-text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1)))) {
+@supports (
+  (text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1))) or
+    (-webkit-text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1)))
+) {
   .watermark {
     -webkit-text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1));
     text-stroke: 1px var(--color-bg, rgba(255, 255, 255, 1));
@@ -282,13 +268,13 @@
 
 .like-icon:active .core,
 .like-icon:active .main-body {
-  fill: var(--color-heart-mb, #FF0000);
+  fill: var(--color-heart-mb, #ff0000);
 }
 
 .like-icon.is-liked .core,
 .like-icon.is-liked .main-body,
 .like-icon.is-liked .contour {
-  fill: var(--color-heart-mb, #FF0000);
+  fill: var(--color-heart-mb, #ff0000);
 }
 
 .sparks {
@@ -364,7 +350,6 @@
 }
 
 @media (width <=375px) {
-
   .watermark {
     inset-inline-end: 13px;
   }
