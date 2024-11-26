@@ -29,4 +29,4 @@
 - При нажатии на кнопку сохранения появляется модальное окно с подтверждением.
 ### <p align="center">![Save](./screen/save.png)</p>
 
-### *Stack: HTML, SCC( @media, @keyframes, flex, svg )*
+### *Stack: HTML, CSS ( @media, @keyframes, flex, svg )*
